@@ -3,8 +3,10 @@ Early experiments with digital signal processing.
 
 ## Overview
 
-This repository is a signal-processing lab spanning **audio DSP** and **biomedical DSP**.  
-The biomedical track focuses on **reproducible, pipeline-first handling** of WFDB/PhysioNet datasets (e.g., MIT-BIH Arrhythmia).
+**Signals-Lab** is a personal signal-processing workspace spanning two domains:
+
+- **Biomedical DSP** — reproducible pipelines for physiological time-series data  
+- **Music / Experimental DSP** — creative, exploratory audio and synthesis work  
 
 A core principle: **raw datasets are immutable**. All downstream artifacts are derived and reproducible.
 
@@ -25,14 +27,69 @@ A core principle: **raw datasets are immutable**. All downstream artifacts are d
 
 ---
 
-## Pipeline
+## Biomedical Pipeline
 
 ### 1) Ingest (read-only)
-Discovers WFDB records and builds a structured inventory manifest.
+Scans a raw PhysioNet dataset and builds a structured inventory.
+
+**Input**
+- WFDB files (`.hea`, `.dat`, `.atr`) under `biomed/assets/datasets/raw/`
+
+**Output**
+- `manifest.csv` / `manifest.parquet`
+
+**What it gathers**
+- sampling rate, signal length, channel metadata
+- optional preview statistics from a small time window
 
 ```bash
-scripts/.venv/bin/python scripts/ingest_physionet.py \
-  --data-root /ABS/PATH/TO/mit-bih-arrhythmia-database-1.0.0 \
-  --out dataset/clean/mit-bih \
+biomed/scripts/.venv/bin/python biomed/scripts/ingest_physionet.py \
+  --data-root biomed/assets/datasets/raw/physionet/mit-bih/mit-bih-arrhythmia-database-1.0.0 \
+  --out biomed/datasets/clean/mit-bih \
   --read-samples \
   --max-seconds 10
+
+### 2) Validate (accurate filetypes, appropriate sample rate/duration)
+Applies structural and signal-level testing.
+
+**Input**
+- `manifest.csv` / `manifest.parquet`
+
+**Output**
+- `record_quality.csv` / `usable_records.csv` / `validation_summary.json`
+
+**What it checks**
+- correct file presence (.hea, .dat)
+- valid sampling length and duration
+- non-finite sample detection
+
+```bash
+biomed/scripts/.venv/bin/python biomed/scripts/validate_physionet.py \
+  --manifest biomed/assets/datasets/clean/mit-bih/manifest.csv \
+  --out biomed/assets/datasets/clean/mit-bih
+
+### 3) Extract (baseline figures for analysis)
+
+**Input**
+- `usable_records.csv`
+
+**Output**
+- `ecg_features.csv`
+- `ecg_features.parquet`
+- `features_summary.json`
+
+**Analysis includes**
+- per-channel statistics (mean, std, RMS, peak-to-peak, zero-cross rate)
+- crude heart-rate estimation
+
+```bash
+biomed/scripts/.venv/bin/python biomed/scripts/features_ecg_baseline.py \
+  --usable biomed/assets/datasets/clean/mit-bih/usable_records.csv \
+  --out biomedical/assets/datasets/clean/mit-bih \
+  --seconds 30
+
+## Notes
+
+**This project is educational and exploratory in nature.
+
+**Biomedical scripts focus on signal handling and pipeline design, not clinical diagnosis.
