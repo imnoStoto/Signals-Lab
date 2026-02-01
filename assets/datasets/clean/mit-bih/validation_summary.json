@@ -1,0 +1,13 @@
+{
+  "total_records": 5,
+  "usable_records": 5,
+  "failed_records": 0,
+  "failure_reason_counts": {},
+  "thresholds": {
+    "min_fs": 1.0,
+    "min_sig_len": 1,
+    "min_duration_sec": 10.0,
+    "max_duration_sec": 86400,
+    "flatline_eps": 1e-12
+  }
+}

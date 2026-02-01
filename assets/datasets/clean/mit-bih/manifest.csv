@@ -1,0 +1,6 @@
+record_id,record_base_path,n_sig,fs,sig_len,duration_sec,sig_names,units,base_date,base_time,preview_seconds,preview_samples,preview_min,preview_max,preview_mean
+100,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/100,2,360.0,650000,1805.5555555555557,"MLII,V5","mV,mV",,,10.0,3600,-0.645,0.96,-0.26154791666666666
+101,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/101,2,360.0,650000,1805.5555555555557,"MLII,V1","mV,mV",,,10.0,3600,-0.59,1.375,-0.23096111111111112
+102,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/102,2,360.0,650000,1805.5555555555557,"V5,V2","mV,mV",,,10.0,3600,-3.28,2.21,-0.11847430555555553
+103,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/103,2,360.0,650000,1805.5555555555557,"MLII,V2","mV,mV",,,10.0,3600,-0.675,1.875,-0.15070694444444446
+104,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/104,2,360.0,650000,1805.5555555555557,"V5,V2","mV,mV",,,10.0,3600,-1.105,1.5,-0.07038333333333333

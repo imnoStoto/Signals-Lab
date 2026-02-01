@@ -1,0 +1,17 @@
+# ---- Raw datasets (never commit) ----
+datasets/raw/
+data/raw/
+
+# PhysioNet / WFDB files
+**/*.dat
+**/*.hea
+**/*.atr
+
+# ---- Python environments ----
+.venv/
+scripts/.venv/
+
+# ---- Python cache ----
+__pycache__/
+*.pyc
+

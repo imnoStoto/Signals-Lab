@@ -1,0 +1,6 @@
+record_id,record_base_path,fs,sig_len,n_sig,duration_sec,hea_exists,dat_exists,usable,reasons
+100,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/100,360.0,650000,2,1805.555555555556,True,True,True,
+101,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/101,360.0,650000,2,1805.555555555556,True,True,True,
+102,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/102,360.0,650000,2,1805.555555555556,True,True,True,
+103,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/103,360.0,650000,2,1805.555555555556,True,True,True,
+104,/Users/umanocommovente/Projects/Signals-Lab/assets/datasets/raw/mit-bih/mit-bih-arrhythmia-database-1.0.0/104,360.0,650000,2,1805.555555555556,True,True,True,

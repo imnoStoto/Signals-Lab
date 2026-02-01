@@ -1,0 +1,9 @@
+{
+  "records_requested": 5,
+  "rows_written": 10,
+  "failures": 0,
+  "window_seconds": 30.0,
+  "start_sec": 0.0,
+  "estimate_hr": false,
+  "channels": "all"
+}
